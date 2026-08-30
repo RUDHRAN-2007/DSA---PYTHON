@@ -1,0 +1,14 @@
+class Solution:
+    def missingNumber(self, nums):
+        
+        n = max(nums)
+        og = n * ((n+1) / 2)
+        total = sum(nums)
+
+        if(total > og):
+            return total - og
+        elif(total == og):
+            if(len(nums) + 1 == max):
+                return max + 1
+            else:
+                return 0
