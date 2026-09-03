@@ -1,0 +1,23 @@
+class Solution:
+    def maxLen(self, arr):
+        n = len(arr)
+        current_sum = 0
+        max_length = 0
+        seen = {}
+        for i in range(n):
+            current_sum += arr[i]
+
+            if(current_sum == 0):
+                max_length = max(max_length,i+1)
+
+            elif current_sum not in seen:
+                seen[current_sum] = i
+
+            
+            else:
+                summ = i - seen[current_sum]
+                max_length = max(max_length,summ)
+
+        return max_length
+
+            
