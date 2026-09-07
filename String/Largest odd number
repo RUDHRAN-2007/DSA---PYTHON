@@ -1,0 +1,15 @@
+class Solution:
+    def largestOddNumber(self, num: str) -> str:
+        s = len(num)
+        for i in range(s-1,-1,-1):
+            value = int(num[i])
+            if value % 2 != 0:
+                return num[:i+1]
+        return ""
+
+            
+
+
+
+        
+        
