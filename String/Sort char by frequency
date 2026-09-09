@@ -1,0 +1,26 @@
+class Solution:
+    def frequencySort(self, s: str) -> str:
+        n = len(s)
+        freq = {}
+
+        max_val = 0
+        max_char = ""
+        result = ""
+
+        for i in range(n):
+            if(s[i] in freq):
+                freq[s[i]] += 1
+            else:
+                freq[s[i]] = 1
+
+        while len(freq) > 0:
+            for char,value in freq.items():
+                if max_val < value:
+                    max_val = value
+                    max_char = char
+            
+        
+            result += max_char * max_val
+            del freq[max_char]
+            max_val = 0
+        return result
