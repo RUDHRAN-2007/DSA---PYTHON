@@ -1,0 +1,29 @@
+class Solution:
+    def beautySum(self, s: str) -> int:
+        n = len(s)
+        total = 0
+
+        for i in range(n):
+            freq = {}
+
+            for j in range(i, n):
+
+                
+                if s[j] in freq:
+                    freq[s[j]] += 1
+                else:
+                    freq[s[j]] = 1
+
+                min_val = n
+                max_val = 0
+
+                for char, count in freq.items():
+                    if count > max_val:
+                        max_val = count
+
+                    if count < min_val:
+                        min_val = count
+
+                total += max_val - min_val
+
+        return total
