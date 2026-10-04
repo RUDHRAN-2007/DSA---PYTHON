@@ -1,0 +1,19 @@
+class Solution:
+    def topKFrequent(self, nums: list[int], k: int) -> list[int]:
+        freq = {}
+        for i in range(len(nums)):
+            if nums[i] in freq :
+                freq[nums[i]] += 1
+            else:
+                freq[nums[i]] = 1
+        
+        result = []
+        for o in range(k) :
+            max_count = 0
+            for i , j in freq.items():
+                     
+            result.append(max_char)
+            freq[max_char] = 0
+            
+        
+        return result
